@@ -1,0 +1,11 @@
+body {
+	background: lightcyan;
+	width: 800px;
+	margin: auto;
+}
+
+p {
+	color: grey;
+	border: 1px solid grey;
+	padding: 15px;
+}
