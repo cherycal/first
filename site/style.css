@@ -11,7 +11,7 @@ p.first {
 }
 
 p.second {
-	color: lightgrey;
+	color: darkgrey;
 	border: 1px solid grey;
 	padding: 15px;
 }
