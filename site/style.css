@@ -4,8 +4,14 @@ body {
 	margin: auto;
 }
 
-p {
+p.first {
 	color: grey;
+	border: 1px solid grey;
+	padding: 15px;
+}
+
+p.second {
+	color: lightgrey;
 	border: 1px solid grey;
 	padding: 15px;
 }
