@@ -6,12 +6,12 @@ body {
 
 p.first {
 	color: grey;
-	border: 10px solid dimgrey;
+	border: 2px solid dimgrey;
 	padding: 15px;
 }
 
 p.second {
-	color: darkgrey;
-	border: 10px solid #050515;
+	color: #051515;
+	border: 2px solid #050515;
 	padding: 15px;
 }
