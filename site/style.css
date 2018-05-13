@@ -1,17 +1,17 @@
 body {
-	background: cornsilk;
+	background: azure;
 	width: 800px;
 	margin: auto;
 }
 
 p.first {
 	color: grey;
-	border: 1px solid grey;
+	border: 1px #050515;
 	padding: 15px;
 }
 
 p.second {
 	color: darkgrey;
-	border: 1px solid grey;
+	border: 1px #050515;
 	padding: 15px;
 }
