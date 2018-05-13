@@ -5,13 +5,13 @@ body {
 }
 
 p.first {
-	color: white;
+	color: black;
 	border: 5px solid dimgrey;
 	padding: 15px;
 }
 
 p.second {
-	color: white;
+	color: black;
 	border: 1px solid #050515;
 	padding: 15px;
 }
