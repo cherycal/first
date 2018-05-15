@@ -15,3 +15,14 @@ p.second {
 	border: 1px solid #050515;
 	padding: 15px;
 }
+
+nav.nav1{
+	width: 200px;
+	float: left;
+}
+
+nav.nav2{
+	width: 200px;
+	float: left;
+}
+
