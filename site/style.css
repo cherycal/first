@@ -2,6 +2,7 @@ body {
 	background: azure;
 	width: 800px;
 	margin: auto;
+	overflow: auto;
 }
 
 p.first {
