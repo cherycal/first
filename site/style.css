@@ -27,3 +27,6 @@ nav.nav2{
 	float: left;
 }
 
+nav.nav3{
+	clear: both;
+}
