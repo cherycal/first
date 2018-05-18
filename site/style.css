@@ -6,12 +6,14 @@ body {
 }
 
 p.first {
+	background: white;
 	color: black;
 	border: 1px solid grey;
 	padding: 15px;
 }
 
 p.second {
+	background: white;
 	color: black;
 	border: 1px solid #050515;
 	padding: 15px;
