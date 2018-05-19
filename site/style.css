@@ -4,7 +4,11 @@ body {
 	margin: auto;
 	overflow: auto;
 	font-size: x-large;
-	
+
+}
+
+.css-selector {
+  font-family: 'Antic Slab', serif;
 }
 
 p.first {
