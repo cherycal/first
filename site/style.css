@@ -3,6 +3,8 @@ body {
 	width: 800px;
 	margin: auto;
 	overflow: auto;
+	font-size: x-large;
+	
 }
 
 p.first {
