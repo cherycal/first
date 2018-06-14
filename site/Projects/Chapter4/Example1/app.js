@@ -1,6 +1,6 @@
 var main = function() {
-	"use strict";
-	window.alert("hello world");
+    "use strict";
+    window.alert("hello world");
 };
 
 $(document).ready(main);
