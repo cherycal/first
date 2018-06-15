@@ -1,8 +1,8 @@
 #var main = function() {
-#    "use strict";
-#    window.alert("hello world");
+ #   "use strict";
+ #   window.alert("hello world");
 #};
 
 #$(document).ready(main);
 
-alert("This is an alert message");
+document.write('<h3>' + 'greeting' + '</h3>')
