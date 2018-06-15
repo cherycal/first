@@ -1,4 +1,7 @@
+var main = function() {
+    "use strict";
+    document.write('<h3>' + 'greeting' + '</h3>')
+    window.alert("hello world");
+};
 
-
-document.write('<h3>' + 'greetings' + '</h3>')
-window.alert("hello world");
+$(document).ready(main);
