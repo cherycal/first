@@ -1,4 +1,4 @@
 
 
-document.write('<h3>' + 'greeting' + '</h3>')
+document.write('<h3>' + 'greetings' + '</h3>')
 window.alert("hello world");
