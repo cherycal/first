@@ -1,4 +1,4 @@
-var greeting = 'hello 4';
+var greeting = 'hello 5';
 var today = new Date();
 
 document.write('<h3>' + greeting2 + '</h3>')
