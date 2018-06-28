@@ -7,9 +7,10 @@ var main = function() {
 		//console.log("Hello world!");
 		//$(".comments").append("<p>this is a new comment</p>");
 		//var $new_comment = $("<p>").text("this too is a new comment");
-		var $new_comment = $("<p>").text($(".comment-input input").val())
-
-		$(".comments").append($new_comment);
+		if ($(".comment-input input").val() !== "") {
+			var $new_comment = $("<p>").text($(".comment-input input").val())
+			$(".comments").append($new_comment);
+		}
 	});
 	
 
