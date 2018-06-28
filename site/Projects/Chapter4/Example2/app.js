@@ -5,7 +5,9 @@ var main = function() {
 
 	$(".comment-input button").on("click", function(event){
 		//console.log("Hello world!");
-		$(".comments").append("<p>this is a new comment</p>");
+		//$(".comments").append("<p>this is a new comment</p>");
+		var $new_comment.text("this too is a new comment");
+		$(".comments").append($new_comment);
 	});
 	
 
