@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Oct 31 00:54:44 2015
-
+# MLB data package
 @author: Chance Steinberg, cws2136
 """
 import csv
