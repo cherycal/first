@@ -2,9 +2,9 @@ __author__ = 'chance'
 
 import time
 import csv
+import tools
 
 from bs4 import BeautifulSoup
-from selenium import webdriver
 import push
 
 sz = 25
@@ -14,14 +14,16 @@ for i in range(0,sz-1):
     my_results[i] = [None] * cols
 
 out_file = 'totals.csv'
-w_a = 'w'
+w_a = 'a'
 
-inst = push.Push()
+#inst = push.Push()
 sleep_interval = 7
 
-driver = webdriver.Chrome('C:/Users/chery/chromedriver.exe')
+driver = tools.get_driver()
 
-scoring_intervals = [149]
+# 3-8, 111-114 are off days
+
+scoring_intervals = [2,155]
 printflag = 1
 
 for scoring_interval in scoring_intervals:
@@ -127,17 +129,24 @@ for scoring_interval in scoring_intervals:
             csv_writer = csv.writer(output)
 
             for i in range(0,len(batting)):
-                print(batting[str(i)])
-                csv_writer.writerow(batting[str(i)])
+                out_list = batting[str(i)]
+                out_list.insert(0,str(scoring_interval))
+                print(out_list)
+                csv_writer.writerow(out_list)
 
             for i in range(0,len(pitching)):
-                print(pitching[str(i)])
-                csv_writer.writerow(pitching[str(i)])
+                out_list = pitching[str(i)]
+                out_list.insert(0, str(scoring_interval))
+                print(out_list)
+                csv_writer.writerow(out_list)
 
-            print(total["0"])
-            csv_writer.writerow(total["0"])
 
-driver.close()
+            out_list = total["0"]
+            out_list.insert(0, str(scoring_interval))
+            print(out_list)
+            csv_writer.writerow(out_list)
+
+driver.quit()
 exit(0)
 
 
