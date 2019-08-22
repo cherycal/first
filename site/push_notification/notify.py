@@ -16,7 +16,6 @@ inst = push.Push()
 o_pts = new_o_pts = 0
 sleep_interval = 2
 
-
 url = "http://fantasy.espn.com/baseball/team?leagueId=162788&seasonId=2019&teamId=4&fromTeamId=4"
 
 driver = webdriver.Chrome('C:/Users/chery/chromedriver.exe')
@@ -40,7 +39,7 @@ while(1):
     else:
         print("Failed get")
     driver.refresh()
-    time.sleep(240)
+    time.sleep(120)
 
 
 
