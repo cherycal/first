@@ -11,7 +11,7 @@ from datetime import datetime
 import push
 inst = push.Push()
 
-platform = tools.get_platform()
+#platform = tools.get_platform()
 bdb = sqldb.DB('bdb.db')
 
 
@@ -20,16 +20,22 @@ team_dict = {}
 old_rosters = {}
 new_rosters = {}
 now = datetime.now() # current date and time
-date_time = now.strftime("%m/%d/%Y, %H:%M:%S")
+date_time = now.strftime("%m/%d/%Y-%H:%M:%S")
+out_date = now.strftime("%m%d%Y-%H%M%S")
+outfile = "log." + str(out_date)
+print(outfile)
 msg = ""
 
-c = bdb.select("SELECT * FROM Leagues")
+f = open(outfile, "w")
 
+
+
+c = bdb.select("SELECT * FROM Leagues")
 for t in c:
     league_dict[t[0]] = t[1]
 
-c = bdb.select("SELECT * FROM Rosters where LeagueID != 14047614")
 
+c = bdb.select("SELECT * FROM Rosters where LeagueID != 14047614")
 for t in c:
     #print(t)
     old_rosters[t[0]+':'+t[1]] = t[1]
@@ -37,21 +43,12 @@ for t in c:
 
 
 c = bdb.delete("DELETE FROM Rosters")
+
+
 c = bdb.select("SELECT * FROM Leagues where LeagueID != 14047614")
 
-# options = Options()
-# options.add_argument('--headless')
-# options.add_argument('--disable-gpu')  # Last I checked this was necessary.
-# if (platform == "Windows" ):
-#     driver = webdriver.Chrome('C:/Users/chery/chromedriver.exe', chrome_options=options )
-# elif (platform == "linux"):
-#     driver = webdriver.Chrome( chrome_options=options)
-# else:
-#     print("Platform " + platform + " not recognized. Exiting.")
-#     exit(-1)
 
 driver = tools.get_driver()
-
 
 for t in c:
     url = "http://fantasy.espn.com/baseball/league/rosters?leagueId=" + str(t[0])
@@ -86,6 +83,8 @@ for t in c:
                     new_rosters[row[0]+':'+name.text] = name.text
                     bdb.insert(command)
 
+
+
 c = bdb.select("SELECT count(Player) from Rosters")
 players = c[0][0]
     
@@ -99,7 +98,9 @@ if (int(players) < 1145 ):
     inst.push("Roster error: "+str(date_time), msg)
 else:
     print("Rosters appear to be full: " + str(players))
-                    
+
+
+
 for p in old_rosters:
     if new_rosters.get(p):
         if ( old_rosters[p] == new_rosters[p] ):
@@ -132,7 +133,9 @@ else:
     print("Msg: " + msg)
     inst.push("No changes: "+str(date_time), msg)
 
+f.write(msg)
 
+f.close()
 driver.quit()
 bdb.close()
 

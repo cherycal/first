@@ -14,7 +14,7 @@ for i in range(0,sz-1):
     my_results[i] = [None] * cols
 
 out_file = 'totals.csv'
-w_a = 'a'
+w_a = 'w'
 
 #inst = push.Push()
 sleep_interval = 7
@@ -23,7 +23,7 @@ driver = tools.get_driver()
 
 # 3-8, 111-114 are off days
 
-scoring_intervals = [2,155]
+scoring_intervals = [157]
 printflag = 1
 
 for scoring_interval in scoring_intervals:

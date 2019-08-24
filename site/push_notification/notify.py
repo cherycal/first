@@ -39,7 +39,7 @@ while(1):
     else:
         print("Failed get")
     driver.refresh()
-    time.sleep(120)
+    time.sleep(60)
 
 
 
