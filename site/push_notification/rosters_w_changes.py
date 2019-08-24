@@ -19,6 +19,7 @@ league_dict = {}
 team_dict = {}
 old_rosters = {}
 new_rosters = {}
+insert_list = []
 now = datetime.now() # current date and time
 date_time = now.strftime("%m/%d/%Y-%H:%M:%S")
 out_date = now.strftime("%m%d%Y-%H%M%S")
@@ -42,7 +43,7 @@ for t in c:
     team_dict[t[1]] = t[2]
 
 
-c = bdb.delete("DELETE FROM Rosters")
+#
 
 
 c = bdb.select("SELECT * FROM Leagues where LeagueID != 14047614")
@@ -79,16 +80,13 @@ for t in c:
                               "\" ,\"" \
                                                                                        + \
                               name.text + "\"," + str(t[0]) + ")"
-                    #print(command)
                     new_rosters[row[0]+':'+name.text] = name.text
-                    bdb.insert(command)
+                    #bdb.insert(command)
+                    insert_list.append(command)
 
-
-
-c = bdb.select("SELECT count(Player) from Rosters")
-players = c[0][0]
+players = len(insert_list)
     
-if (int(players) < 1145 ):
+if ( players < 1145 ):
     print("Not enough players in Rosters: " + str(players))
     msg += "Not enough players in Rosters"
     inst.push("Roster error: "+str(date_time), msg)
@@ -98,7 +96,11 @@ if (int(players) < 1145 ):
     inst.push("Roster error: "+str(date_time), msg)
 else:
     print("Rosters appear to be full: " + str(players))
-
+    print("Updating Rosters table")
+    c = bdb.delete("DELETE FROM Rosters")
+    for command in insert_list:
+        print(command)
+        bdb.insert(command)
 
 
 for p in old_rosters:
