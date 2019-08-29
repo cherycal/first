@@ -92,14 +92,12 @@ if ( players < 1145 ):
     inst.push("Roster error: "+str(date_time), msg)
     time.sleep(2)
     inst.push("Roster error: "+str(date_time), msg)
-    time.sleep(2)
-    inst.push("Roster error: "+str(date_time), msg)
 else:
     print("Rosters appear to be full: " + str(players))
     print("Updating Rosters table")
     c = bdb.delete("DELETE FROM Rosters")
     for command in insert_list:
-        print(command)
+        #print(command)
         bdb.insert(command)
 
 
@@ -128,12 +126,9 @@ for p in new_rosters:
 if (msg != ""):
     print("Msg: " + msg)
     inst.push("Roster changes: "+str(date_time), msg)
-    time.sleep(2)
-    inst.push("Roster changes: "+str(date_time), msg)
 else:
     msg = "No changes"
     print("Msg: " + msg)
-    inst.push("No changes: "+str(date_time), msg)
 
 f.write(msg)
 
