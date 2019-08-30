@@ -5,7 +5,7 @@ __author__ = 'chance'
 
 from flask import Flask, render_template, request, session
 
-app = Flask(__name__)
+app = Flask(__name__) #flask built-in
 app.secret_key = "chance"
 
 @app.route('/') # www.mysite.com/api/
