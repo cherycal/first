@@ -20,11 +20,12 @@ w_a = 'w'
 #inst = push.Push()
 sleep_interval = 7
 
-driver = webdriver.Chrome('C:/Users/chery/chromedriver.exe')
+#driver = webdriver.Chrome('C:/Users/chery/chromedriver.exe')
+driver = tools.get_driver()
 
 # 3-8, 111-114 are off days
 
-scoring_intervals = [162]
+scoring_intervals = [163]
 printflag = 1
 
 for scoring_interval in scoring_intervals:
