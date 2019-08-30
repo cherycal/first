@@ -3,9 +3,12 @@ __author__ = 'chance'
 import time
 import csv
 import tools
-from bs4 import BeautifulSoup
+from selenium import webdriver
 
-sz = 25
+from bs4 import BeautifulSoup
+import push
+
+sz = 30
 cols = 15
 my_results = [None] * sz
 for i in range(0,sz-1):
@@ -14,13 +17,14 @@ for i in range(0,sz-1):
 out_file = 'totals.csv'
 w_a = 'w'
 
+#inst = push.Push()
 sleep_interval = 7
 
-driver = tools.get_driver()
+driver = webdriver.Chrome('C:/Users/chery/chromedriver.exe')
 
 # 3-8, 111-114 are off days
 
-scoring_intervals = [161]
+scoring_intervals = [162]
 printflag = 1
 
 for scoring_interval in scoring_intervals:
@@ -71,8 +75,11 @@ for scoring_interval in scoring_intervals:
                 if (div_text == "" or div_text == "--"):
                     div_text = "0"
                 my_ds.append(div_text)
+            #print(my_ds)
             if( ( iter == 1 or iter == 4 ) and len(my_ds) > 6):
                 my_ds = [my_dt, str(scoring_interval), '', my_ds[0],my_ds[6]]
+            if( ( iter == 1 or iter == 4 ) and my_ds[3] == 'TOTALS'):
+                my_ds = [my_dt, str(scoring_interval), '', my_ds[0], my_ds[3]]
             if(iter == 1):
                 batting[row] = my_ds
             if(iter == 2 or iter == 3 ):
@@ -96,6 +103,7 @@ for scoring_interval in scoring_intervals:
             if( iter == 4):
                 datapoints = 0
                 lines = datapoints
+                #print(my_ds)
                 pitching[row] = my_ds
             if(iter > 4 ):
                 for d in my_ds:
@@ -109,7 +117,6 @@ for scoring_interval in scoring_intervals:
                     pitching[row][3] = "PITCHING_TOTAL"
                     totcolumn = len(pitching[row]) - 1
                     pitchtotal = pitching[row][totcolumn]
-                    #print(pitchtotal)
                     if (pitchtotal == "" or pitchtotal == "--" ):
                         pitchtotal = "0"
                     total["0"] = pitching[row].copy()
@@ -145,7 +152,4 @@ for scoring_interval in scoring_intervals:
 
 driver.quit()
 exit(0)
-
-
-
 
