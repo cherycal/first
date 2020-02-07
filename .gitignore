@@ -97,4 +97,7 @@ ENV/
 # mypy
 .mypy_cache/
 
-#*~
+# tildes
+*~
+*\~
+
