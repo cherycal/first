@@ -19,11 +19,12 @@ def get_platform():
 
     return platforms[sys.platform]
 
-def get_driver():
+def get_driver(mode=""):
     platform = get_platform()
     options = Options()
-    options.add_argument('--headless')
-    options.add_argument('--disable-gpu')  # Last I checked this was necessary.
+    if (mode != "verbose"):
+        options.add_argument('--headless')
+        options.add_argument('--disable-gpu')  # Last I checked this was necessary.
     if (platform == "Windows"):
         driver = webdriver.Chrome('C:/Users/chery/chromedriver.exe', chrome_options=options)
     elif (platform == "linux"):
