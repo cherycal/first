@@ -85,8 +85,10 @@ for t in c:
                     insert_list.append(command)
 
 players = len(insert_list)
+
+minimum = 1100
     
-if ( players < 1145 ):
+if ( players < minimum ):
     print("Not enough players in Rosters: " + str(players))
     msg += "Not enough players in Rosters"
     inst.push("Roster error: "+str(date_time), msg)
