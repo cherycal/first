@@ -1,0 +1,19 @@
+body{
+
+	background: lightcyan;
+	width: 800px;
+	margin: auto;
+}
+
+h1{
+
+	color: maroon;
+	text-align: center;
+
+}
+
+p{
+	color: grey;
+	border: 1px solid grey;
+	padding: 10px;
+}
