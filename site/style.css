@@ -1,27 +1,108 @@
-body {
-	background: azure;
-	width: 800px;
-	margin: auto;
-	overflow: auto;
-	font-size: large;
+
+header h1{
+	float: left;
+	font-family: Courier;
+	color: darkgoldenrod;
 }
+
+body {
+	background-image: url("dist.jpg"); 
+	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+	/*overflow: auto;
+	background: mediumturquoise;
+	width: 900 px;
+	margin: auto;*/
+	font-size: large;
+	color: aliceblue;
+}
+
+
+header .container, main .container, footer.container {
+	max-width: 855 px;
+}
+
+header {
+	position:fixed;
+	left:0px;
+   	top:0px;
+	width:100%;
+	background: #222200;
+	overflow: auto;
+}
+
+footer {
+	position:fixed;
+   	left:0px;
+   	bottom:0px;
+   	height:155px;
+   	width:100%;
+	background: #222200;
+	overflow: auto;
+}
+
+
+header nav{
+	float: right;
+	min-width: 510 px;
+	
+}
+
+div.contact {
+	float: left;
+	font-family: Courier;
+	color: darkgoldenrod;
+	
+}
+
+footer nav{
+	float: right;
+	min-width: 510 px;
+	
+}
+
+main {
+	padding-top: 100px;
+	padding-left: 50px;
+	min-height: 800 px;
+}
+
+main .images {
+	float: right;
+}
+
+a {
+	color: aliceblue;
+}
+
+
 
 .css-selector {
-  font-family: 'Bellefair', serif;
+  font-family: "Great Vibes", serif;
 }
 
-p.first {
-	background: white;
-	color: black;
-	border: 1px solid grey;
-	padding: 15px;
+
+p.link {
+	min-width: 200 px;
+	float: right;
+	background: #2f2f00;
+	border: 10px black;
+	padding-left: 80px;
+	padding-right: 80px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 p.second {
-	background: white;
-	color: black;
-	border: 1px solid #050515;
-	padding: 15px;
+	float: right;
+	background: black;
+	color: grey;
+	border: 10px black;
+	padding-left: 140px;
+	padding-right: 140px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 nav.nav1{

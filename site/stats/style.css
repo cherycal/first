@@ -1,19 +1,52 @@
-body{
-
-	background: lightcyan;
-	width: 800px;
-	margin: auto;
+body {
+  background: #f9e933;
 }
 
-h1{
-
-	color: maroon;
-	text-align: center;
-
+header, main, footer {
+  min-width: 855px;
 }
 
-p{
-	color: grey;
-	border: 1px solid grey;
-	padding: 10px;
+header .container, main .container, footer .container {
+  max-width: 855px;
+  margin: auto;
+}
+
+header {
+  background: white;
+  overflow: auto;
+}
+
+header h1 {
+  float: left;
+  width: 570px;
+}
+
+header nav {
+  float: right;
+  width: 285px;
+}
+
+main {
+  background: white;
+  overflow: auto;
+}
+
+main .left {
+  float: left;
+  width: 570px;
+}
+
+main .right {
+  float: right;
+  width: 285px;
+}
+
+footer .left {
+  float: left;
+  width: 570px;
+}
+
+footer .sitemap {
+  float: right;
+  width: 285px;
 }
