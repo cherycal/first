@@ -104,6 +104,11 @@ a {
 	text-decoration: none;
 }
 
+a.home-link {
+	font-family: "Noto Serif JP";
+	color: dimgrey;
+	text-decoration: none;
+}
 
 
 .css-selector {
