@@ -5,13 +5,13 @@ header{
 	background: #222200;
 }
 
-main {
+body {
 	background-image: url("dist.jpg"); 
 	background-position: top;
   	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
-	min-height: 1200px;
+	min-height: 800px;
 	height: 100%;
 	/*
 	width: 900 px;
@@ -19,6 +19,10 @@ main {
 	margin: auto;
 	font-size: large;
 	color: #E0B649;
+}
+
+main {
+	min-height: 800px;
 }
 
 
