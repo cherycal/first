@@ -1,6 +1,6 @@
 
 header{
-	
+	position: fixed;
 	width:100%;
 	background: #222200;
 }
@@ -12,6 +12,7 @@ main {
 	background-size: cover;
 	background-attachment: fixed;
 	min-height: 1200px;
+	height: 100%;
 	/*
 	width: 900 px;
 	*/
