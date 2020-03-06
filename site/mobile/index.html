@@ -13,135 +13,87 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<style>
+    /* Some custom styles to beautify this example */
+    .row{     
+        background: #222200;
+        left: 0px;
+        border: 1px solid rgba(256,256,256,0.5);
+    }
+    [class^=col]{
+        background: #222200;
+        border: 1px solid rgba(256,256,256,0.5);
+    }
+</style>
 </head>
 <body>
 	<header>
-		<div class="row">
-			<div class="col-md-4 col-lg-4">
-				<h2>
-					<a href="https://cherycal.github.io/first/site/" class="home-link">Z-STILLERY</a>
-				</h2>
-			</div>
-			<div class="col-md-8 col-lg-4">
-			</div>
-			<div class="col-md-12 col-lg-4">
-				<div class="row">
-					<div class="header-links">
-						<a href="https://cherycal.github.io/first/site/" class="link">  Home</a>
-					</div>
-					<div class="header-links">
-						<a href="https://www.w3schools.com/cssref/css_colors.asp" target="_blank" class="link">Colors</a>
-					</div>
-					<div class="header-links-2">
-						<a href="https://fonts.google.com/" target="_blank" class="link">Fonts</a>
-					</div>
-				</div>	
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<h2>
+						<a href="https://cherycal.github.io/first/site/" class="home-link">Z-STILLERY</a>
+					</h2>
+				</div>
+				<div class="col-lg-4 col-md-6">
+				</div>
+				<div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
+					<div class="row no-gutters">
+						<div class="col-2 col-sm-4 col-lg-4 col-md-4">
+							<div class="header-links">
+								<a href="https://cherycal.github.io/first/site/" class="head-link">Home</a>
+							</div>
+						</div>
+						<div class="col-2 col-sm-4 col-lg-4 col-md-4">
+							<div class="header-links">
+								<a href="https://www.w3schools.com/cssref/css_colors.asp" target="_blank" class="head-link">Colors</a>
+							</div>
+						</div>
+						<div class="col-2 col-sm-4 col-lg-4 col-md-4">
+							<div class="header-links">
+								<a href="https://fonts.google.com/" target="_blank" class="head-link">Fonts</a>
+							</div>
+						</div>
+					</div>	
+				</div>
 			</div>
 		</div>
 	</header>
 	<main>
-		<ul style="list-style-type:none;">
-			<li>
-				<a href="https://www.espn.com" target="_blank" class="link">ESPN</a>
-				<ul style="list-style-type:none;">
-					<li>
-					<a href="https://www.espn.com/mlb/scoreboard" target="_blank" class="link">MLB</a>
-					</li>
-				</ul>
-			</li>
-			<li >
-				<a href="http://www.rotoworld.com/playernews/mlb/baseball-player-news" target="_blank" class="link">RotoWorld</a>
-				<ul style="list-style-type:none;">
-					<li>
-					<a href="http://www.rotoworld.com/teams/depth-charts/mlb.aspx" target="_blank" class="link">AL Depth</a>
-					</li>
-					<li>
-					<a href="http://www.rotoworld.com/teams/depth-charts/mlb.aspx?league=National" target="_blank" class="link">NL Depth</a>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<a href="http://www.fangraphs.com" target="_blank" class="link">FanGraphs</a>
-			</li>
-			<li>
-				<a href="https://www.rosterresource.com/mlb-closer-depth-chart/" target="_blank" class="link">RR Closers</a>
-			</li>
-			<li>
-				<a href="https://cherycal.github.io/first/site/sport/fantasy/" target="_blank" class="link">Fantasy</a>
-				<ul style="list-style-type:none;">
-					<nav class="nav1">
-						
-						<li>
-						<a href="http://games.espn.com/flb/clubhouse?leagueId=37863846&teamId=6" target="_blank" class="link">FRAN</a>
-						</li>
-						
-						<li>
-						<a href="http://games.espn.com/flb/clubhouse?leagueId=162788&teamId=4" target="_blank" class="link">LXRS</a>
-						</li>
-						
-						<li>
-						<a href="http://games.espn.com/flb/clubhouse?leagueId=6455&teamId=2" target="_blank" class="link">FB6</a>
-						</li>
-						<li>
-						<a href="http://games.espn.com/flb/clubhouse?leagueId=87301&teamId=9" target="_blank" class="link">BELT</a>
-						</li>
-					</nav>
-					<nav class="nav2">			
-						<li>
-						<a href="http://games.espn.com/flb/leagueoffice?leagueId=37863846" target="_blank" class="link">FRAN Top</a>
-						</li>
-						<li>
-						<a href="http://games.espn.com/flb/leagueoffice?leagueId=162788" target="_blank" class="link">LXRS Top</a>
-						</li>
-						<li>
-						<a href="http://games.espn.com/flb/leagueoffice?leagueId=6455" target="_blank" class="link">FB6 Top</a>
-						</li>
-						<li>
-						<a href="http://games.espn.com/flb/leagueoffice?leagueId=87301" target="_blank" class="link">BELT Top</a>
-						</li>
-					</nav>
-				</ul>
-			</li>
-			<nav class="nav3">
-				<p class="second"> News Feed </p>
-				<li>
-					<a href="https://cherycal.github.io/first/site/sport/" class="link">Sport</a>
-				</li>
-				<li>
-					<a href="https://cherycal.github.io/first/site/maps/" class="link">Maps</a>
-					<ul style="list-style-type:none;">
-						<li>
-						<a href="https://www.google.com/maps/@32.7186235,-117.1676501,15z?hl=en" target="_blank" class="link">Google Maps</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="https://cherycal.github.io/first/site/pol/" class="link">Pol</a>
-				</li>
-				<li>
-					<a href="https://cherycal.github.io/first/site/stats/" class="link">Stats</a>
-				</li>
-				<li>
-					<a href="https://cherycal.github.io/first/site/unix/" class="link">Unix</a>
-				</li>
-				<li>
-					<a href="https://cherycal.github.io/first/site/mobile/" class="link">Mobile</a>
-				</li>
-				<li>
-					<a href="https://sandiego.eater.com/" target="_blank" class="link">Eater</a>
-				</li>
-				<li>
-					<a href="https://cherycal.github.io/first/site/weather/" class="link">Weather</a>
-					<ul style="list-style-type:none;">
-						<li>
-						<a href="https://www.wunderground.com/forecast/us/ca/san-diego/32.72,-117.16" target="_blank" class="link">10 D</a>
-						</li>
-					</ul>
-				</li>
-			</nav>
-		</ul>
 	</main>
 	<footer>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="contact">
+						<p>  Z-stillery</p>
+						<p>  1551 Union St.</p>
+						<p>  San Diego, CA 92101</p>
+		</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+				</div>
+				<div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
+					<div class="row no-gutters">
+						<div class="col-2 col-sm-4 col-lg-4 col-md-4">
+							<div class="header-links">
+								<a href="#" class="foot-link">Support</a>
+							</div>
+						</div>
+						<div class="col-2 col-sm-4 col-lg-4 col-md-4">
+							<div class="header-links">
+								<p></p>
+							</div>
+						</div>
+						<div class="col-2 col-sm-4 col-lg-4 col-md-4">
+							<div class="header-links">
+								<a href="#" class="foot-link">FAQ</a>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
 	</footer>
 </body>
 </html>
