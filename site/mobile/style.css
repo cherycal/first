@@ -7,75 +7,73 @@ body {
 	background-attachment: fixed;
 	/*
 	width: 900 px;
-	margin: auto;*/
+	*/
+	margin: auto;
 	font-size: large;
 	color: #E0B649;
 }
 
+
 header, main, footer{
-	min-width: 855px;
-}
-
-header .container, main .container, footer.container {
-	max-width: 855px;
-	margin: auto;
-}
-
-header {
-	position:fixed;
-	left:0;
-   	top:0;
-	width:100%;
-	background: #222200;
-}
-
-header h1{
-	float: left;
-	font-family: Courier;
-	color: darkgoldenrod;
-}
-
-
-header nav{
-	float: right;
-	width: 255px;
 	
 }
 
-div.header-links {
-	float: right;
-	width: 600px;
+header .container, main .container, footer.container {
+
 }
 
-div.header-links-2 {
-	padding: 35px;
-	float: right;
-	width: 100px;
+
+header {
+	
+	
+	background: #222200;
+	
 }
+
 
 footer {
 	position:fixed;
    	left:0;
    	bottom:0;
-   	height:155px;
    	width:100%;
 	background: #222200;
 	overflow: auto;
 }
 
+header h2{
+	padding-top: 10px;
+	padding-left: 10px;
+	font-family: Courier;
+	color: darkgoldenrod;
+}
+
+
+
+div.header-links {
+	padding-left: 30px;
+	padding-right: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+div.header-links-2 {
+	padding: 20px;
+	
+}
+
+
+
 div.footer-links {
-	float: right;
-	width: 600px;
+	padding: 25px;
+
 }
 
 div.footer-links-2 {
-	padding: 35px;
-	float: right;
-	width: 100px;
+	padding: 25px;
 }
 
+
 div.contact {
-	float: left;
 	font-family: Courier;
 	color: darkgoldenrod;
 	
@@ -87,16 +85,17 @@ footer nav{
 	
 }
 
+
 main {
-	padding-top: 100px;
-	padding-left: 50px;
+	padding-top: 10px;
+	/*padding-left: 50px;*/
 }
 
 main .images {
 	float: right;
 }
 
-a {
+a.link {
 	font-family: Courier;
 	text-shadow: 4px 4px 8px #100000;
 	color: #e6f2ff;
