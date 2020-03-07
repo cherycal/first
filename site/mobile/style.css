@@ -79,13 +79,10 @@ footer nav{
 	
 }
 
-
-
 a.link {
 	font-family: Courier;
 	text-shadow: 4px 4px 8px #100000;
 	color: #e6f2ff;
-	opacity: .9;
 	text-decoration: none;
 }
 
@@ -109,7 +106,8 @@ a.foot-link {
 
 a.home-link {
 	font-family: "Noto Serif JP";
-	color: #665a37;
+	font-size: 24pt;
+	color: darkgoldenrod;
 	text-decoration: none;
 }
 
@@ -147,4 +145,8 @@ nav.nav2{
 
 nav.nav3{
 	clear: both;
+}
+
+.nav.navbar-brand a {
+    color: darkgoldenrod;
 }
