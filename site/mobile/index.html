@@ -4,11 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Bootstrap 4 Fixed Layout Example</title>
+<link href="style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+    /* Some custom styles to beautify this example */
+    .row{    
+    	color: white; 
+    }
+    [class^=col]{
+        color: white;
+    }
+    a{
+		font-family: Courier;
+		text-shadow: 4px 4px 8px #100000;
+		color: #e6f2ff;
+		opacity: .9;
+		text-decoration: none;
+	}
+</style>
 </head>
 <body>
 	<header>
@@ -36,15 +53,111 @@
 	</header>
 	<div class="container">
 	    <div class="jumbotron">
-	        <h1>Learn to Create Websites</h1>
-	        <p class="lead">In today's world internet is the most popular way of connecting with the people. At <a href="https://www.tutorialrepublic.com" target="_blank">tutorialrepublic.com</a> you will learn the essential web development technologies along with real life practice examples, so that you can create your own website to connect with the people around the world.</p>
-	        <p><a href="https://www.tutorialrepublic.com" target="_blank" class="btn btn-success btn-lg">Get started today</a></p>
+	        <h1>News Feed</h1>
+	        <p class="lead">Stories from <a href="https://www.rotoworld.com" target="_blank">rotoworld</a></p>
+	        <p><a href="https://www.espn.com" target="_blank" class="btn btn-success btn-lg">ESPN</a></p>
 	    </div>
 	    <div class="row">
 	        <div class="col-md-4">
-	            <h2>HTML</h2>
-	            <p>HTML is the standard markup language for describing the structure of the web pages. Our HTML tutorials will help you to understand the basics of latest HTML5 language, so that you can create your own web pages or website.</p>
-	            <p><a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank" class="btn btn-success">Learn More »</a></p>
+	            <ul style="list-style-type:none;">
+					<li>
+						<a href="https://www.espn.com" target="_blank">ESPN</a>
+						<ul style="list-style-type:none;">
+							<li>
+							<a href="https://www.espn.com/mlb/scoreboard" target="_blank">MLB</a>
+							</li>
+						</ul>
+					</li>
+					<li >
+						<a href="http://www.rotoworld.com/playernews/mlb/baseball-player-news" target="_blank">RotoWorld</a>
+						<ul style="list-style-type:none;">
+							<li>
+							<a href="http://www.rotoworld.com/teams/depth-charts/mlb.aspx" target="_blank">AL Depth</a>
+							</li>
+							<li>
+							<a href="http://www.rotoworld.com/teams/depth-charts/mlb.aspx?league=National" target="_blank">NL Depth</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="http://www.fangraphs.com" target="_blank">FanGraphs</a>
+					</li>
+					<li>
+						<a href="https://www.rosterresource.com/mlb-closer-depth-chart/" target="_blank">RR Closers</a>
+					</li>
+					<li>
+						<a href="https://cherycal.github.io/first/site/sport/fantasy/" target="_blank">Fantasy</a>
+						<ul style="list-style-type:none;">
+							<nav class="nav1">
+								
+								<li>
+								<a href="http://games.espn.com/flb/clubhouse?leagueId=37863846&teamId=6" target="_blank">FRAN</a>
+								</li>
+								
+								<li>
+								<a href="http://games.espn.com/flb/clubhouse?leagueId=162788&teamId=4" target="_blank">LXRS</a>
+								</li>
+								
+								<li>
+								<a href="http://games.espn.com/flb/clubhouse?leagueId=6455&teamId=2" target="_blank">FB6</a>
+								</li>
+								<li>
+								<a href="http://games.espn.com/flb/clubhouse?leagueId=87301&teamId=9" target="_blank">BELT</a>
+								</li>
+							</nav>
+							<nav class="nav2">			
+								<li>
+								<a href="http://games.espn.com/flb/leagueoffice?leagueId=37863846" target="_blank">FRAN Top</a>
+								</li>
+								<li>
+								<a href="http://games.espn.com/flb/leagueoffice?leagueId=162788" target="_blank">LXRS Top</a>
+								</li>
+								<li>
+								<a href="http://games.espn.com/flb/leagueoffice?leagueId=6455" target="_blank">FB6 Top</a>
+								</li>
+								<li>
+								<a href="http://games.espn.com/flb/leagueoffice?leagueId=87301" target="_blank">BELT Top</a>
+								</li>
+							</nav>
+						</ul>
+					</li>
+					<nav class="nav3">
+						<li>
+							<a href="https://cherycal.github.io/first/site/sport/">Sport</a>
+						</li>
+						<li>
+							<a href="https://cherycal.github.io/first/site/maps/">Maps</a>
+							<ul style="list-style-type:none;">
+								<li>
+								<a href="https://www.google.com/maps/@32.7186235,-117.1676501,15z?hl=en" target="_blank">Google Maps</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="https://cherycal.github.io/first/site/pol/">Pol</a>
+						</li>
+						<li>
+							<a href="https://cherycal.github.io/first/site/stats/">Stats</a>
+						</li>
+						<li>
+							<a href="https://cherycal.github.io/first/site/unix/">Unix</a>
+						</li>
+						<li>
+							<a href="https://cherycal.github.io/first/site/mobile/">Mobile</a>
+						</li>
+						<li>
+							<a href="https://sandiego.eater.com/" target="_blank">Eater</a>
+						</li>
+						<li>
+							<a href="https://cherycal.github.io/first/site/weather/">Weather</a>
+							<ul style="list-style-type:none;">
+								<li>
+								<a href="https://www.wunderground.com/forecast/us/ca/san-diego/32.72,-117.16" target="_blank">10 D</a>
+								</li>
+							</ul>
+						</li>
+					</nav>
+				</ul>
 	        </div>
 	        <div class="col-md-4">
 	            <h2>CSS</h2>
@@ -59,16 +172,36 @@
 	    </div>
 	    <hr>
 	    <footer>
-	        <div class="row">
-	            <div class="col-md-6">
-	                <p>Copyright &copy; 2019 Tutorial Republic</p>
-	            </div>
-	            <div class="col-md-6 text-md-right">
-	                <a href="#" class="text-dark">Terms of Use</a> 
-	                <span class="text-muted mx-2">|</span> 
-	                <a href="#" class="text-dark">Privacy Policy</a>
-	            </div>
-	        </div>
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="contact">
+						<p>  Z-stillery</p>
+						<p>  1551 Union St.</p>
+						<p>  San Diego, CA 92101</p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+				</div>
+				<div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
+					<div class="row no-gutters">
+						<div class="col-2 col-sm-4 col-lg-4 col-md-4">
+							<div class="header-links">
+								<a href="#" class="foot-link">Support</a>
+							</div>
+						</div>
+						<div class="col-2 col-sm-4 col-lg-4 col-md-4">
+							<div class="header-links">
+								<p></p>
+							</div>
+						</div>
+						<div class="col-2 col-sm-4 col-lg-4 col-md-4">
+							<div class="header-links">
+								<a href="#" class="foot-link">FAQ</a>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
 	    </footer>
 	</div>
 </body>
