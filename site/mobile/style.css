@@ -107,9 +107,11 @@ a.home-link {
 }
 
 a.link:hover {
+	background:#222200;
 	text-decoration: none;
 	color: #f3ffe6;
 	font-weight: bold;
+	opacity: 1;
 }
 
 /*
