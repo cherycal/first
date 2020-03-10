@@ -106,6 +106,12 @@ a.home-link {
 	text-decoration: none;
 }
 
+a.link:hover {
+	text-decoration: none;
+	color: #f3ffe6;
+	font-weight: bold;
+}
+
 /*
 p.link {
 	background: #2f2f00;
