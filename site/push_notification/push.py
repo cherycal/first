@@ -5,7 +5,7 @@ import time
 
 class Push(object):
 
-    message_body: str
+    #message_body: str
 
     def __init__(self):
         api_key = "AAAARAUK_1U:APA91bEWDFmhqWVEicI1xWh7R41lB8DGyjiRrLlfaa" \
