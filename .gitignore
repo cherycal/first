@@ -102,3 +102,4 @@ ENV/
 *\~
 
 bdb.db
+*test*py
