@@ -6,10 +6,10 @@ from git import Repo
 # To find .git directory run git rev-parse --show-toplevel
 # /media/sf_Shared/first
 
-repo = Repo("/Ubuntu/Shared/first/")
+repo = Repo("/media/sf_Shared/first")
 assert not repo.bare
 
-file = "site/push_notification/file.txt"
+file = "site/push_notification/stub.txt"
 
 git = repo.git
 
@@ -22,7 +22,3 @@ git.push()
 print( git.status() )
 
 
-
-__author__ = 'chance'
-
-print("1")

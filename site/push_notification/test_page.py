@@ -11,7 +11,7 @@ sleep_interval = 120
 
 url = "http://fantasy.espn.com/baseball/recentactivity?leagueId=162788"
 
-driver = webdriver.Chrome('C:/Users/chery/chromedriver.exe')
+driver = webdriver.Chrome()
 driver.get(url)
 time.sleep(sleep_interval)
 

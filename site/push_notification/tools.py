@@ -1,11 +1,7 @@
 import sys
-import sqldb
-import tools
-from bs4 import BeautifulSoup
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-import time
-from datetime import datetime
+
+#for webscraping
 
 def get_platform():
     platforms = {
@@ -21,14 +17,14 @@ def get_platform():
 
 def get_driver(mode=""):
     platform = get_platform()
-    options = Options()
-    if (mode != "verbose"):
-        options.add_argument('--headless')
-        options.add_argument('--disable-gpu')  # Last I checked this was necessary.
+    options = webdriver.ChromeOptions()
+    #if (mode != "verbose"):
+        #options.headless = True
+        #options.add_argument('window-size=1920x1080')
     if (platform == "Windows"):
-        driver = webdriver.Chrome('C:/Users/chery/chromedriver.exe', chrome_options=options)
-    elif (platform == "linux"):
-        driver = webdriver.Chrome(chrome_options=options)
+        driver = webdriver.Chrome('C:/Users/chery/chromedriver.exe', options=options)
+    elif (platform == "linux") or (platform == "Linux"):
+        driver = webdriver.Chrome('/usr/bin/chromedriver',options=options)
     else:
         print("Platform " + platform + " not recognized. Exiting.")
         exit(-1)
