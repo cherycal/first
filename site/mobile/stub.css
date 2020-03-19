@@ -1,6 +1,11 @@
-body {
-	background-color: #112211
-	color: white;
-	font-family: Courier;
-
+header{
+	position: fixed;
+	width:100%;
+	background: #222200;
 }
+
+body {
+	background-color: #112211;
+	color: oldlace;
+}
+
