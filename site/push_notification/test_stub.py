@@ -14,8 +14,8 @@ sleep_interval = 6
 url = "https://www.stubhub.com/the-strokes-tickets-the-strokes-inglewood-the-forum-los-angeles-3" \
       "-14-2020/event/104567878/?sliderMax=203.84%2C34.92&qty=2&sort=quality%20desc%2Cprice%20asc&sortKey=bestSeats&excl=1"
 
-gitfile_name = "site/push_notification/stub.txt"
-outfile_name = "stub.txt"
+gitfile_name = "site/mobile/stub.txt"
+outfile_name = "/media/sf_Shared/first/site/mobile/stub.txt"
 
 repo = Repo("/media/sf_Shared/first")
 assert not repo.bare
