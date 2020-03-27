@@ -6,19 +6,20 @@ from git import Repo
 # To find .git directory run git rev-parse --show-toplevel
 # /media/sf_Shared/first
 
-repo = Repo("/media/sf_Shared/first")
+#repo = Repo("/media/sf_Shared/first")
+repo = Repo("C:\\Ubuntu\\Shared\\first")
 assert not repo.bare
 
 file = "site/push_notification/stub.txt"
 
 git = repo.git
 
-git.add(file)
+#git.add(file)
 
-git.commit('-m','update',file)
+#git.commit('-m','update',file)
 
-git.push()
+#git.push()
 
-print( git.status() )
+print(git.status())
 
 
