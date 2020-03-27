@@ -6,16 +6,34 @@ import time
 import push
 from git import Repo
 from datetime import datetime
+#import html
+from html import HTML
+
+def html_line(text,plus=0):
+    h = HTML()
+    p = ""
+    if(plus):
+        p = plus
+    h.p(str(text)+p)
+    f.write(str(h))
+
+def html_hr():
+    h = HTML()
+    f.write(str(h.hr))
 
 inst = push.Push()
 
-sleep_interval = 6
+sleep_interval = 8
 
 url = "https://www.stubhub.com/the-strokes-tickets-the-strokes-inglewood-the-forum-los-angeles-3" \
       "-14-2020/event/104567878/?sliderMax=203.84%2C34.92&qty=2&sort=quality%20desc%2Cprice%20asc&sortKey=bestSeats&excl=1"
 
-gitfile_name = "site/mobile/stub.txt"
-outfile_name = "/media/sf_Shared/first/site/mobile/stub.txt"
+gitfile_name = "site/mobile/stub.html"
+outfile_name = "/media/sf_Shared/first/site/mobile/stub.html"
+
+h = HTML()
+html_head = "<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><title>Stub</title><link href='stub.css' rel='stylesheet' type='text/css'></head><body><hr>"
+html_footer = "</body></html>"
 
 repo = Repo("/media/sf_Shared/first")
 assert not repo.bare
@@ -29,6 +47,8 @@ while (1):
     date_time = now.strftime("%m/%d/%Y-%H:%M:%S")
 
     f = open(outfile_name, "w")
+    f.write(html_head)
+    
     driver = tools.get_driver()
     driver.get(url)
     time.sleep(sleep_interval)
@@ -48,26 +68,25 @@ while (1):
                         section_number >= 124 and section_number <= 129 )):
                     flag = 1
                     print(section_short)
-                    f.write(section_short)
-                    f.write("\n")
+                    html_line(section_short,": ")
+
                     break
             else:
                 flag = 1
                 print(section_short)
-                f.write(section_short)
-                f.write("\n")
+                html_line(section_short,": ")
                 break
 
         for px in div.find_all('div', class_='PriceDisplay__price'):
             if(flag):
                 print(px.text)
-                f.write(px.text)
-                print('')
-                f.write("\n\n")
+                html_line(px.text)
+                html_hr()
 
 
     print(date_time)
-    f.write(date_time)
+    html_line(date_time)
+    f.write(html_footer)
     f.close()
 
 
