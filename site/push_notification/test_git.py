@@ -1,4 +1,6 @@
+import git
 from git import Repo
+import tools
 
 # rorepo is a Repo instance pointing to the git-python repository.
 # For all you know, the first argument to Repo is a path to the repository
@@ -6,8 +8,15 @@ from git import Repo
 # To find .git directory run git rev-parse --show-toplevel
 # /media/sf_Shared/first
 
-#repo = Repo("/media/sf_Shared/first")
-repo = Repo("C:\\Ubuntu\\Shared\\first")
+platform = tools.get_platform()
+if (platform == "Windows"):
+    repo = Repo("C:\\Ubuntu\\Shared\\first")
+elif (platform == "Linux" or platform == "linux"):
+    repo = Repo("/media/sf_Shared/first")
+else:
+    print("OS platform " + platform + " isn't Windows or Linux. Exit.")
+    exit(1)
+
 assert not repo.bare
 
 file = "site/push_notification/stub.txt"

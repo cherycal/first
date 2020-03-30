@@ -7,9 +7,9 @@ class DB:
     def __init__(self, db):
         platform = tools.get_platform()
         if (platform == "Windows"):
-            self.db = 'C:\\Ubuntu\\Shared\\first\\site\\push_notification\\' + db
-        elif (platform == "linux"):
-            self.db = '/media/sf_Shared/first/site/push_notification/' + db
+            self.db = 'C:\\Ubuntu\\Shared\\data\\' + db
+        elif (platform == "linux"  or platform == 'Linux'):
+            self.db = '/media/sf_Shared/data/' + db
         else:
             print("Platform " + platform + " not recognized in sqldb::DB. Exiting.")
             exit(-1)

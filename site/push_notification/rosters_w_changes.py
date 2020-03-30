@@ -7,13 +7,11 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import time
 from datetime import datetime
+import os
 
 import push
 inst = push.Push()
-
-#platform = tools.get_platform()
-bdb = sqldb.DB('bdb.db')
-
+bdb = sqldb.DB('Baseball.db')
 
 league_dict = {}
 team_dict = {}
@@ -23,33 +21,37 @@ insert_list = []
 now = datetime.now() # current date and time
 date_time = now.strftime("%m/%d/%Y-%H:%M:%S")
 out_date = now.strftime("%m%d%Y-%H%M%S")
-outfile = "log." + str(out_date)
+
+platform = tools.get_platform()
+current_dir = os.getcwd()
+if (platform == "Windows"):
+    outfile = current_dir + "\\logs\\log." + str(out_date)
+elif (platform == "Linux" or platform == "linux"):
+    outfile = current_dir + "/logs/log." + str(out_date)
+else:
+    print("OS platform " + platform + " isn't Windows or Linux. Exit.")
+    exit(1)
+
 print(outfile)
 msg = ""
 
+
 f = open(outfile, "w")
 
-
-
-c = bdb.select("SELECT * FROM Leagues")
+c = bdb.select("SELECT LeagueID, Name FROM Leagues where Active = 'True'")
 for t in c:
     league_dict[t[0]] = t[1]
 
 
-c = bdb.select("SELECT * FROM Rosters where LeagueID != 14047614")
+c = bdb.select("SELECT * FROM Rosters where LeagueID  in (SELECT LeagueID FROM Leagues where Active = 'True')")
 for t in c:
-    #print(t)
     old_rosters[t[0]+':'+t[1]] = t[1]
     team_dict[t[1]] = t[2]
 
 
-#
+c = bdb.select("SELECT * FROM Leagues where Active = 'True'")
 
-
-c = bdb.select("SELECT * FROM Leagues where LeagueID != 14047614")
-
-
-driver = tools.get_driver()
+driver = tools.get_driver("headless")
 
 for t in c:
     url = "http://fantasy.espn.com/baseball/league/rosters?leagueId=" + str(t[0])
@@ -81,12 +83,11 @@ for t in c:
                                                                                        + \
                               name.text + "\"," + str(t[0]) + ")"
                     new_rosters[row[0]+':'+name.text] = name.text
-                    #bdb.insert(command)
                     insert_list.append(command)
 
 players = len(insert_list)
 
-minimum = 1100
+minimum = 200
     
 if ( players < minimum ):
     print("Not enough players in Rosters: " + str(players))
@@ -97,7 +98,7 @@ if ( players < minimum ):
 else:
     print("Rosters appear to be full: " + str(players))
     print("Updating Rosters table")
-    c = bdb.delete("DELETE FROM Rosters")
+    c = bdb.delete("DELETE FROM Rosters where LeagueID  in (SELECT LeagueID FROM Leagues where Active = 'True')")
     for command in insert_list:
         #print(command)
         bdb.insert(command)

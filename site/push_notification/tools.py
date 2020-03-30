@@ -18,9 +18,8 @@ def get_platform():
 def get_driver(mode=""):
     platform = get_platform()
     options = webdriver.ChromeOptions()
-    #if (mode != "verbose"):
-        #options.headless = True
-        #options.add_argument('window-size=1920x1080')
+    if (mode == "headless"):
+        options.add_argument('--headless')
     if (platform == "Windows"):
         driver = webdriver.Chrome('C:/Users/chery/chromedriver.exe', options=options)
     elif (platform == "linux") or (platform == "Linux"):

@@ -21,6 +21,8 @@ def html_hr():
     h = HTML()
     f.write(str(h.hr))
 
+
+
 inst = push.Push()
 
 sleep_interval = 8
@@ -52,51 +54,56 @@ while (1):
     driver = tools.get_driver()
     driver.get(url)
     time.sleep(sleep_interval)
-    html = driver.page_source
-    soup = BeautifulSoup(html,'html.parser')
+    try:
+        html = driver.page_source
 
-    for div in soup.find_all('div', class_='RoyalTicketListPanel__column'):
-        for h1 in div.find_all('h1'):
-            flag = 0
-            section = h1.text
-            section_name = section.split()
-            len_sec_num = len(section_name)
-            section_short = section_name[len_sec_num-1]
-            if(section_short.isnumeric()):
-                section_number = int(section_short)
-                if( (section_number >= 108 and section_number <= 113 ) or (section_number < 4) or (
-                        section_number >= 124 and section_number <= 129 )):
+        soup = BeautifulSoup(html,'html.parser')
+
+        for div in soup.find_all('div', class_='RoyalTicketListPanel__column'):
+            for h1 in div.find_all('h1'):
+                flag = 0
+                section = h1.text
+                section_name = section.split()
+                len_sec_num = len(section_name)
+                section_short = section_name[len_sec_num-1]
+                if(section_short.isnumeric()):
+                    section_number = int(section_short)
+                    if( (section_number >= 108 and section_number <= 113 ) or (section_number < 4) or (
+                            section_number >= 124 and section_number <= 129 )):
+                        flag = 1
+                        print(section_short)
+                        html_line(section_short,": ")
+
+                        break
+                else:
                     flag = 1
                     print(section_short)
                     html_line(section_short,": ")
-
                     break
-            else:
-                flag = 1
-                print(section_short)
-                html_line(section_short,": ")
-                break
 
-        for px in div.find_all('div', class_='PriceDisplay__price'):
-            if(flag):
-                print(px.text)
-                html_line(px.text)
-                html_hr()
+            for px in div.find_all('div', class_='PriceDisplay__price'):
+                if(flag):
+                    print(px.text)
+                    html_line(px.text)
+                    html_hr()
 
 
-    print(date_time)
-    html_line(date_time)
-    f.write(html_footer)
-    f.close()
+        print(date_time)
+        html_line(date_time)
+        f.write("<img src='the-forum.jpg'>")
+        f.write(html_footer)
+        f.close()
 
 
-    git.add(gitfile_name)
-    time.sleep(sleep_interval)
-    git.commit('-m','update',gitfile_name)
-    time.sleep(sleep_interval)
-    git.push()
-    time.sleep(sleep_interval)
-    driver.quit()
-    time.sleep(120)
+        git.add(gitfile_name)
+        time.sleep(sleep_interval)
+        git.commit('-m','update',gitfile_name)
+        time.sleep(sleep_interval)
+        git.push()
+        time.sleep(sleep_interval)
+        driver.quit()
+        time.sleep(120)
 
+    except:
+        print ("Get page failed ")
 
