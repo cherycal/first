@@ -131,6 +131,7 @@ if (msg != ""):
     inst.push("Roster changes: "+str(date_time), msg)
 else:
     msg = "No changes"
+    inst.push("Roster changes: " + str(date_time), msg)
     print("Msg: " + msg)
 
 f.write(msg)

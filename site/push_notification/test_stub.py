@@ -43,6 +43,7 @@ git = repo.git
 
 flag = 0
 
+
 while (1):
 
     now = datetime.now()  # current date and time
@@ -50,11 +51,15 @@ while (1):
 
     f = open(outfile_name, "w")
     f.write(html_head)
-    
-    driver = tools.get_driver()
-    driver.get(url)
-    time.sleep(sleep_interval)
+
+    px_flag = 0
+
     try:
+
+        driver = tools.get_driver()
+        driver.get(url)
+        time.sleep(sleep_interval)
+
         html = driver.page_source
 
         soup = BeautifulSoup(html,'html.parser')
@@ -83,6 +88,7 @@ while (1):
 
             for px in div.find_all('div', class_='PriceDisplay__price'):
                 if(flag):
+                    px_flag = 1
                     print(px.text)
                     html_line(px.text)
                     html_hr()
@@ -94,16 +100,20 @@ while (1):
         f.write(html_footer)
         f.close()
 
+        if (px_flag):
+            git.add(gitfile_name)
+            time.sleep(sleep_interval)
+            git.commit('-m','update',gitfile_name)
+            time.sleep(sleep_interval)
+            git.push()
+        else:
+            print("No push")
 
-        git.add(gitfile_name)
-        time.sleep(sleep_interval)
-        git.commit('-m','update',gitfile_name)
-        time.sleep(sleep_interval)
-        git.push()
         time.sleep(sleep_interval)
         driver.quit()
-        time.sleep(120)
+        time.sleep(40)
 
     except:
         print ("Get page failed ")
-
+        driver.quit()
+        time.sleep(40)
