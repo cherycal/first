@@ -57,7 +57,7 @@ for t in c:
     url = "http://fantasy.espn.com/baseball/league/rosters?leagueId=" + str(t[0])
     print (url)
     driver.get(url)
-    time.sleep(12)
+    time.sleep(20)
 
     html = driver.page_source
     soup = BeautifulSoup(html, "lxml")
@@ -77,6 +77,7 @@ for t in c:
                 title = tr.find('span')
                 a = tr.find_all('a')
                 row = [i.text for i in a]
+                print("Row: " + row )
                 if (len(row)):
                     command = "INSERT INTO Rosters(Player, Team, LeagueID) VALUES ( \"" + row[0] + \
                               "\" ,\"" \
