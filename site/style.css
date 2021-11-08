@@ -129,9 +129,9 @@ div.second {
 	float: right;
 	background: black;
 	width: 300px;
-	height: 200px;
+	height: 100px;
 	border: 10px black;
-	overflow: auto;
+	overflow: scroll;
 	padding-left: 140px;
 	padding-right: 140px;
 	padding-top: 20px;
