@@ -6,7 +6,7 @@ header{
 }
 
 body {
-	background-image: url("dist.jpg"); 
+	background-image: url("dist_dark.jpg");
 	background-position: top;
   	background-repeat: no-repeat;
 	background-size: cover;
