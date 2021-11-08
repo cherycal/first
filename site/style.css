@@ -128,9 +128,10 @@ p.link {
 div.second {
 	float: right;
 	background: black;
-	width: 200px;
-	height: 200px;
+	width: 400px;
+	height: 400px;
 	border: 10px black;
+	overflow: auto;
 	padding-left: 140px;
 	padding-right: 140px;
 	padding-top: 20px;
