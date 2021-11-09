@@ -27,41 +27,28 @@
 			<th>Email</th>
 			</tr>
 			<tbody id = "myTable">
-			  <tr>
-				<td>John</td>
-				<td>Doe</td>
-				<td>john@example.com</td>
-			  </tr>
-			  <tr>
-				<td>Mary</td>
-				<td>Moe</td>
-				<td>mary@example.com</td>
-			  </tr>
-			  <tr>
-				<td>July</td>
-				<td>Dooley</td>
-				<td>july@example.com</td>
-			  </tr>
 			</tbody>
 			</table>
 			<script>
 				var myArray = [
 					{'firstname': 'John', 'lastname': 'Doe', 'email': 'john.doe@gmail.com'},
-					{'firstname': 'Jane', 'lastname': 'Doe', 'email': 'jane.doe@gmail.com'}
-					{'firstname': 'Jack', 'lastname': 'Doe', 'email': 'jack.doe@gmail.com'}
+					{'firstname': 'Jane', 'lastname': 'Doe', 'email': 'jane.doe@gmail.com'},
+					{'firstname': 'Jack', 'lastname': 'Doe', 'email': 'jack.doe@gmail.com'},
 				]
 
 				buildTable(myArray)
 
 				function buildTable(data) {
-					var table = getElementById('myTable')
+					var table = document.getElementById('myTable')
 					for (var i = 0; i < data.length; i++) {
 						var row = `<tr>
 										<td>${data[i].firstname}</td>
 										<td>${data[i].lastname}</td>
 										<td>${data[i].email}</td>
 									</tr>`
+                        table.innerHTML += row
 					}
+
 				}
 			</script>
 	</div>
