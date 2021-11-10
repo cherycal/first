@@ -1,3 +1,17 @@
+body {
+	background-image: url("../../dist.jpg");
+	background-position: bottom;
+  	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	/*
+	width: 900 px;
+	margin: auto;*/
+	font-size: large;
+	color: #E0B649;
+}
+
+
 th{
 	font-family: Courier;
 	color: darkgoldenrod;
