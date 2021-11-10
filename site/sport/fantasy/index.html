@@ -25,9 +25,9 @@
 	<div class="container">
 		<table class="table table-striped table-hover">
 			<tr class = "bg-info">
-				<th>Firstname</th>
-				<th>Lastname</th>
-				<th>Email</th>
+				<th style="color: beige; font-family: Courier;">Firstname</th>
+				<th style="color: beige; font-family: Courier;">Lastname</th>
+				<th style="color: beige; font-family: Courier;">Email</th>
 			</tr>
 			<tbody id = "myTable">
 			</tbody>
@@ -45,9 +45,9 @@
 				var table = document.getElementById('myTable')
 				for (var i = 0; i < data.length; i++) {
 					var row = `<tr>
-									<td>${data[i].firstname}</td>
-									<td>${data[i].lastname}</td>
-									<td>${data[i].email}</td>
+									<td style="color: beige; font-family: Courier;">${data[i].firstname}</td>
+									<td style="color: beige; font-family: Courier;">${data[i].lastname}</td>
+									<td style="color: beige; font-family: Courier;">${data[i].email}</td>
 								</tr>`
 					table.innerHTML += row
 				}
