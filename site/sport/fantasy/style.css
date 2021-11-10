@@ -1,3 +1,10 @@
+
+header{
+	position: fixed;
+	width:100%;
+	background: #222200;
+}
+
 body {
 	background-image: url("../../../dist.jpg");
 	background-position: bottom;
@@ -17,3 +24,9 @@ th{
 	color: darkgoldenrod;
 	background-color: navy;
 }
+
+
+main .images {
+	float: right;
+}
+
