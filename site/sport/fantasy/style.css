@@ -2,8 +2,8 @@
 head{
 	position: fixed;
 	width:100%;
-	background: #222200;
-	background-color: #222200;
+	background: grey;
+	background-color: grey;
 }
 
 body {
@@ -23,8 +23,8 @@ body {
 
 th{
 	font-family: Courier;
-	color: darkgoldenrod;
-	background-color: navy;
+	color: grey;
+	background-color: #220000;
 }
 
 
