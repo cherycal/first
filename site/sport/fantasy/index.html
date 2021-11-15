@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="shortcut icon" href="../../favicon.png" type="image/png">
     <title>Prostillery</title>
     <link href="style.css" rel="stylesheet" type="text/css">
     <!link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -24,9 +24,12 @@
 	<div class="container">
 		<table style="background-color: #222200; color: grey; font-family: Courier;" class="table">
 			<tr class = "bg-info" >
-                <th style="background-color: #222200; color: grey; font-family: Courier;">Firstname</th>
-                <th style="background-color: #222200; color: grey; font-family: Courier;">Lastname</th>
-                <th style="background-color: #222200; color: grey; font-family: Courier;">Email</th>
+                <th data-column="firstname" data-order="desc"
+					style="background-color: #222200; color: grey; font-family: Courier;">Firstname &#9650</th>
+                <th data-column="lastname" data-order="desc"
+					style="background-color: #222200; color: grey; font-family: Courier;">Lastname &#9650</th>
+                <th data-column="email" data-order="desc"
+					style="background-color: #222200; color: grey; font-family: Courier;">Email &#9650</th>
 			</tr>
 			<tbody id = "myTable">
 			</tbody>
@@ -35,13 +38,36 @@
 				var myArray = [
 					{'firstname': 'John', 'lastname': 'Doe', 'email': 'john.doe@gmail.com'},
 					{'firstname': 'Jane', 'lastname': 'Doe', 'email': 'jane.doe@gmail.com'},
-					{'firstname': 'Jack', 'lastname': 'Doe', 'email': 'jack.doe@gmail.com'}
+					{'firstname': 'Jack', 'lastname': 'Doe', 'email': 'jack.doe@gmail.com'},
+					{'firstname': 'Jane', 'lastname': 'Doe Jr.', 'email': 'jane.doe@gmail.com'},
+					{'firstname': 'Jack', 'lastname': 'Doe Jr.', 'email': 'jack.doe@gmail.com'},
+					{'firstname': 'Fred', 'lastname': 'Doe', 'email': 'fred.doe@gmail.com'}
 				]
+
+				$('th').on('click', function(){
+					var column = $(this).data('column')
+					var order = $(this).data('order')
+					var text = $(this).html()
+					text = text.substring( 0, text.length - 1 )
+					console.log("Column was clicked ", column, order);
+					if ( order == 'desc' ){
+						$(this).data('order', 'asc')
+						myArray = myArray.sort((a,b) => a[column] >= b[column] ? 1 : -1 )
+						text += '&#9660'
+					} else {
+						$(this).data('order', 'desc')
+						myArray = myArray.sort((a,b) => a[column] <= b[column] ? 1 : -1 )
+						text += '&#9650'
+					}
+					$(this).html(text)
+					buildTable(myArray)
+				})
 
 				buildTable(myArray)
 
 				function buildTable(data) {
 					var table = document.getElementById('myTable')
+					table.innerHTML = ''
 					for (var i = 0; i < data.length; i++) {
 						var row = `<tr>
 										<td>${data[i].firstname}</td>
