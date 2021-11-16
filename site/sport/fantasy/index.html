@@ -24,9 +24,9 @@
 	<div class="container">
 		<table style="background-color: #222200; color: grey; font-family: Courier;" class="table">
 			<tr class = "bg-info" >
-                <th data-column="firstname" data-order="desc"
+                <th data-column="first_name" data-order="desc"
 					style="background-color: #222200; color: grey; font-family: Courier;">Firstname &#9650</th>
-                <th data-column="lastname" data-order="desc"
+                <th data-column="last_name" data-order="desc"
 					style="background-color: #222200; color: grey; font-family: Courier;">Lastname &#9650</th>
                 <th data-column="email" data-order="desc"
 					style="background-color: #222200; color: grey; font-family: Courier;">Email &#9650</th>
@@ -35,14 +35,7 @@
 			</tbody>
 			</table>
 			<script>
-				var myArray = [
-					{'firstname': 'John', 'lastname': 'Doe', 'email': 'john.doe@gmail.com'},
-					{'firstname': 'Jane', 'lastname': 'Doe', 'email': 'jane.doe@gmail.com'},
-					{'firstname': 'Jack', 'lastname': 'Doe', 'email': 'jack.doe@gmail.com'},
-					{'firstname': 'Jane', 'lastname': 'Doe Jr.', 'email': 'jane.doe@gmail.com'},
-					{'firstname': 'Jack', 'lastname': 'Doe Jr.', 'email': 'jack.doe@gmail.com'},
-					{'firstname': 'Fred', 'lastname': 'Doe', 'email': 'fred.doe@gmail.com'}
-				]
+				var myArray = []
 
 				$('th').on('click', function(){
 					var column = $(this).data('column')
@@ -63,15 +56,23 @@
 					buildTable(myArray)
 				})
 
-				buildTable(myArray)
+				$.ajax({
+					method:'GET',
+					url:'https://reqres.in/api/users',
+					success:function(response){
+						myArray=response.data
+						buildTable(myArray)
+						console.log(response)
+					}
+				})
 
 				function buildTable(data) {
 					var table = document.getElementById('myTable')
 					table.innerHTML = ''
 					for (var i = 0; i < data.length; i++) {
 						var row = `<tr>
-										<td>${data[i].firstname}</td>
-										<td>${data[i].lastname}</td>
+										<td>${data[i].first_name}</td>
+										<td>${data[i].last_name}</td>
 										<td>${data[i].email}</td>
 									</tr>`
                         table.innerHTML += row
