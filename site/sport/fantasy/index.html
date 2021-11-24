@@ -65,7 +65,7 @@
 					method:'GET',
 					url:'https://cherycal.github.io/first/site/sport/fantasy/pitch_events.json',
 					success:function(response){
-						myArray=response.data
+						myArray=response
 						buildTableFromArray(myArray)
 						console.log(response)
 					}
@@ -90,9 +90,7 @@
 					buildTableFromArray(myArray)
 				})
 
-                
 
-                
 
                 buildTableFromArray(myArray)
 
