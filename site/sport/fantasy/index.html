@@ -61,15 +61,15 @@
 				// 	console.log(err);
 				// });
 
-				$.ajax({
-					method:'GET',
-					url:'https://cherycal.github.io/first/site/sport/fantasy/pitch_events',
-					success:function(response){
-						myArray=response.data
-						buildTableFromArray(myArray)
-						console.log(response)
-					}
-				})
+				// $.ajax({
+				// 	method:'GET',
+				// 	url:'https://cherycal.github.io/first/site/sport/fantasy/pitch_events',
+				// 	success:function(response){
+				// 		myArray=response.data
+				// 		buildTableFromArray(myArray)
+				// 		console.log(response)
+				// 	}
+				// })
 
 				$('th').on('click', function(){
 					var column = $(this).data('column')
@@ -119,7 +119,6 @@
 
 				}
 
-				/*
 				function buildTable(data) {
 
 					fetch('./pitch_events.json').then(function(response){
@@ -151,8 +150,6 @@
 					});
 
 				}
-				*/
-				
 
 			</script>
 
