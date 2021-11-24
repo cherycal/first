@@ -60,7 +60,17 @@
 				// }).catch(function(err){
 				// 	console.log(err);
 				// });
-				
+
+				$.ajax({
+					method:'GET',
+					url:'https://cherycal.github.io/first/site/sport/fantasy/pitch_events',
+					success:function(response){
+						myArray=response.data
+						buildTableFromArray(myArray)
+						console.log(response)
+					}
+				})
+
 				$('th').on('click', function(){
 					var column = $(this).data('column')
 					var order = $(this).data('order')
@@ -81,15 +91,7 @@
 				})
 
                 
-				$.ajax({
-					method:'GET',
-					url:'https://cherycal.github.io/first/site/sport/fantasy/pitch_events',
-					success:function(response){
-						myArray=response.data
-						buildTableFromArray(myArray)
-						console.log(response)
-					}
-				})
+
                 
 
                 buildTableFromArray(myArray)
@@ -100,7 +102,7 @@
 					table.innerHTML = ''
 					for (var i = 0; i < data.length; i++) {
 						var row = `<tr>
-										<td column="pitcher">${data[i][0]}</td>
+										<td>${data[i][0]}</td>
 										<td>${data[i][1]}</td>
 										<td>${data[i][2]}</td>
 										<td>${data[i][3]}</td>
@@ -119,6 +121,7 @@
 
 				}
 
+				/*
 				function buildTable(data) {
 
 					fetch('./pitch_events.json').then(function(response){
@@ -150,6 +153,8 @@
 					});
 
 				}
+				*/
+
 			</script>
 
 	</div>
