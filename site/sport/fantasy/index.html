@@ -63,9 +63,9 @@
 
 				$.ajax({
 					method:'GET',
-					url:'https://cherycal.github.io/first/site/sport/fantasy/pitch_events',
+					url:'https://cherycal.github.io/first/site/sport/fantasy/pitch_events.json',
 					success:function(response){
-						myArray=response
+						myArray=response.data
 						buildTableFromArray(myArray)
 						console.log(response)
 					}
