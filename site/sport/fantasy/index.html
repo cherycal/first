@@ -52,14 +52,17 @@
 			<script  type="text/javascript">
                 var myArray = []
 
-				// fetch('./pitch_events.json').then(function(response){
-                //     	return response.json();
-				// }).then(function(pitch_events){
-				// 	myArray = pitch_events
-				// 	buildTableFromArray(myArray)
-				// }).catch(function(err){
-				// 	console.log(err);
-				// });
+				fetch('./pitch_events.json').then(function(response){
+                    	return response.json();
+				}).then(function(pitch_events){
+					myArray = pitch_events
+					buildTableFromArray(myArray)
+				}).catch(function(err){
+					console.log(err);
+				});
+
+				
+                buildTable(myArray)
 
 				// $.ajax({
 				// 	method:'GET',
@@ -90,9 +93,6 @@
 					buildTableFromArray(myArray)
 				})
 
-
-
-                buildTable(myArray)
 
 				function buildTableFromArray(data) {
 
