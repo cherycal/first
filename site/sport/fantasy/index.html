@@ -130,7 +130,7 @@
 					}).then(function(pitch_events){
 						var table = document.getElementById('myTable')
 						table.innerHTML = ''
-						for (var i = 0; i < 50; i++) {
+						for (var i = 0; i < pitch_events.length; i++) {
 							var pitcher = "";
 							var batter = "";
 							pitcher = pitch_events[i][0].normalize('NFD').replace(/[\u0300-\u036f]/g, '');
