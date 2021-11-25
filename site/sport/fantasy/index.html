@@ -100,8 +100,8 @@
 					table.innerHTML = ''
 					for (var i = 0; i < data.length; i++) {
 						var row = `<tr>
-						var pitcher = ""
-						var batter = ""
+						var pitcher = "";
+						var batter = "";
 						pitcher = data[i][0].normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '');
 						batter = data[i][1].normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '');
 						<td>${pitcher}</td>
@@ -132,8 +132,8 @@
 						table.innerHTML = ''
 						for (var i = 0; i < 50; i++) {
 							var row = `<tr>
-							var pitcher = ""
-							var batter = ""
+							var pitcher = "";
+							var batter = "";
 							pitcher = data[i][0].normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '');
 							batter = data[i][1].normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '');
 							<td>${pitch_events[i][2]}</td>
