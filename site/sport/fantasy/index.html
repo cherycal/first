@@ -99,11 +99,11 @@
 					var table = document.getElementById('myTable')
 					table.innerHTML = ''
 					for (var i = 0; i < data.length; i++) {
-						var row = `<tr>
 						var pitcher = "";
 						var batter = "";
 						pitcher = data[i][0].normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '');
 						batter = data[i][1].normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '');
+						var row = `<tr>
 						<td>${pitcher}</td>
 						<td>${batter}</td>
 						<td>${data[i][2]}</td>
@@ -131,11 +131,13 @@
 						var table = document.getElementById('myTable')
 						table.innerHTML = ''
 						for (var i = 0; i < 50; i++) {
-							var row = `<tr>
 							var pitcher = "";
 							var batter = "";
-							pitcher = data[i][0].normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '');
-							batter = data[i][1].normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '');
+							pitcher = pitch_events[i][0].normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '');
+							batter = pitch_events[i][1].normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '');
+							var row = `<tr>
+							<td>${pitcher}</td>
+							<td>${batter}</td>
 							<td>${pitch_events[i][2]}</td>
 							<td>${pitch_events[i][3]}</td>
 							<td>${pitch_events[i][4]}</td>
