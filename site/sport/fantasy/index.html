@@ -130,16 +130,18 @@
 						table.innerHTML = ''
 						for (var i = 0; i < 50; i++) {
 							var row = `<tr>
-											<td column="pitcher">${pitch_events[i][0]}</td>
-											<td>${pitch_events[i][1]}</td>
-											<td>${pitch_events[i][2]}</td>
-											<td>${pitch_events[i][3]}</td>
-											<td>${pitch_events[i][4]}</td>
-											<td>${pitch_events[i][5]}</td>
-											<td>${pitch_events[i][6]}</td>
-											<td>${pitch_events[i][7]}</td>
-											<td>${pitch_events[i][8]}</td>
-										</tr>`
+								const pitcher = data[i][0].normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '');
+								const batter = data[i][1].normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '');
+								<td>${pitcher}</td>
+								<td>${batter}</td>
+								<td>${pitch_events[i][2]}</td>
+								<td>${pitch_events[i][3]}</td>
+								<td>${pitch_events[i][4]}</td>
+								<td>${pitch_events[i][5]}</td>
+								<td>${pitch_events[i][6]}</td>
+								<td>${pitch_events[i][7]}</td>
+								<td>${pitch_events[i][8]}</td>
+								</tr>`
 							table.innerHTML += row
 						}
 						// for(var i=0; i<pitch_events.length;i++ ){
