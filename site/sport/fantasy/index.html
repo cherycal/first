@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+	<meta charset="Windows-1252">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="https://cherycal.github.io/first/site/sport/fantasy/favicon.png" type="image/png">
     <title>Prostillery</title>
@@ -99,8 +99,10 @@
 					var table = document.getElementById('myTable')
 					table.innerHTML = ''
 					for (var i = 0; i < data.length; i++) {
+						var batter = data[i][1]
+						batter.normalize("NFD").replace(/\p{Diacritic}/gu, "")
 						var row = `<tr>
-										<td column="pitcher">${data[i][0]}</td>
+										<td>${data[i][0]}</td>
 										<td>${data[i][1]}</td>
 										<td>${data[i][2]}</td>
 										<td>${data[i][3]}</td>
@@ -126,9 +128,11 @@
 					}).then(function(pitch_events){
 						var table = document.getElementById('myTable')
 						table.innerHTML = ''
-						for (var i = 0; i < 50; i++) {
+						for (var i = 0; i < pitch_events.length; i++) {
+							var batter = pitch_events.rows[i][1]
+							batter.normalize("NFD").replace(/\p{Diacritic}/gu, "")
 							var row = `<tr>
-											<td column="pitcher">${pitch_events[i][0]}</td>
+											<td>${pitch_events.rows[i][0]}</td>
 											<td>${pitch_events.rows[i][1]}</td>
 											<td>${pitch_events.rows[i][2]}</td>
 											<td>${pitch_events.rows[i][3]}</td>
