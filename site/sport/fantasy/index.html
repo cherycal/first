@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="https://cherycal.github.io/first/site/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="./favicon.png" type="image/png">
     <title>Prostillery</title>
     <link href="style.css" rel="stylesheet" type="text/css">
 	/*
@@ -55,25 +55,12 @@
 				fetch('./pitch_events.json').then(function(response){
                     	return response.json();
 				}).then(function(pitch_events){
-					myArray = pitch_events
+					myArray = pitch_events.rows
 					buildTableFromArray(myArray)
 				}).catch(function(err){
 					console.log(err);
 				});
-
 				
-                buildTable(myArray)
-
-				// $.ajax({
-				// 	method:'GET',
-				// 	url:'https://cherycal.github.io/first/site/sport/fantasy/pitch_events',
-				// 	success:function(response){
-				// 		myArray=response.data
-				// 		buildTableFromArray(myArray)
-				// 		console.log(response)
-				// 	}
-				// })
-
 				$('th').on('click', function(){
 					var column = $(this).data('column')
 					var order = $(this).data('order')
@@ -93,27 +80,36 @@
 					buildTableFromArray(myArray)
 				})
 
+                /*
+				$.ajax({
+					method:'GET',
+					url:'https://cherycal.github.io/first/site/sport/fantasy/pitch_events',
+					success:function(response){
+						myArray=response.data
+						buildTable(myArray)
+						console.log(response)
+					}
+				})
+                */
+
+                buildTableFromArray(myArray)
 
 				function buildTableFromArray(data) {
 
 					var table = document.getElementById('myTable')
 					table.innerHTML = ''
 					for (var i = 0; i < data.length; i++) {
-						var pitcher = "";
-						var batter = "";
-						pitcher = data[i][0].normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-						batter = data[i][1].normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 						var row = `<tr>
-						<td>${pitcher}</td>
-						<td>${batter}</td>
-						<td>${data[i][2]}</td>
-						<td>${data[i][3]}</td>
-						<td>${data[i][4]}</td>
-						<td>${data[i][5]}</td>
-						<td>${data[i][6]}</td>
-						<td>${data[i][7]}</td>
-						<td>${data[i][8]}</td>
-						</tr>`
+										<td column="pitcher">${data[i][0]}</td>
+										<td>${data[i][1]}</td>
+										<td>${data[i][2]}</td>
+										<td>${data[i][3]}</td>
+										<td>${data[i][4]}</td>
+										<td>${data[i][5]}</td>
+										<td>${data[i][6]}</td>
+										<td>${data[i][7]}</td>
+										<td>${data[i][8]}</td>
+									</tr>`
 						table.innerHTML += row
 					}
 					// for(var i=0; i<pitch_events.length;i++ ){
@@ -130,22 +126,18 @@
 					}).then(function(pitch_events){
 						var table = document.getElementById('myTable')
 						table.innerHTML = ''
-						for (var i = 0; i < pitch_events.length; i++) {
-							var pitcher = "";
-							var batter = "";
-							pitcher = pitch_events[i][0].normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-							batter = pitch_events[i][1].normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+						for (var i = 0; i < 50; i++) {
 							var row = `<tr>
-							<td>${pitcher}</td>
-							<td>${batter}</td>
-							<td>${pitch_events[i][2]}</td>
-							<td>${pitch_events[i][3]}</td>
-							<td>${pitch_events[i][4]}</td>
-							<td>${pitch_events[i][5]}</td>
-							<td>${pitch_events[i][6]}</td>
-							<td>${pitch_events[i][7]}</td>
-							<td>${pitch_events[i][8]}</td>
-							</tr>`
+											<td column="pitcher">${pitch_events[i][0]}</td>
+											<td>${pitch_events.rows[i][1]}</td>
+											<td>${pitch_events.rows[i][2]}</td>
+											<td>${pitch_events.rows[i][3]}</td>
+											<td>${pitch_events.rows[i][4]}</td>
+											<td>${pitch_events.rows[i][5]}</td>
+											<td>${pitch_events.rows[i][6]}</td>
+											<td>${pitch_events.rows[i][7]}</td>
+											<td>${pitch_events.rows[i][8]}</td>
+										</tr>`
 							table.innerHTML += row
 						}
 						// for(var i=0; i<pitch_events.length;i++ ){
@@ -158,7 +150,6 @@
 					});
 
 				}
-
 			</script>
 
 	</div>
