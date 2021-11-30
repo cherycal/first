@@ -103,7 +103,7 @@
 						batter.normalize("NFD").replace(/\p{Diacritic}/gu, "")
 						var row = `<tr>
 										<td>${data[i][0]}</td>
-										<td>${data[i][1]}</td>
+										<td>${batter}</td>
 										<td>${data[i][2]}</td>
 										<td>${data[i][3]}</td>
 										<td>${data[i][4]}</td>
@@ -133,7 +133,7 @@
 							batter.normalize("NFD").replace(/\p{Diacritic}/gu, "")
 							var row = `<tr>
 											<td>${pitch_events.rows[i][0]}</td>
-											<td>${pitch_events.rows[i][1]}</td>
+											<td>${batter}</td>
 											<td>${pitch_events.rows[i][2]}</td>
 											<td>${pitch_events.rows[i][3]}</td>
 											<td>${pitch_events.rows[i][4]}</td>
